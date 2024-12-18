@@ -10,36 +10,48 @@
 
 body {
     font-family: Arial, sans-serif;
-    margin: 20px;
+    margin: 0; /* Set body margin to 0 */
+    padding: 10px; /* Add padding to ensure some spacing from the window edges */
     background: linear-gradient(135deg, var(--purple) 0%, #FFF9C4 50%, #ff9800 100%);
     color: var(--text-color);
+    display: flex; /* Flex display to align items vertically */
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center-align the content */
+    min-height: 100vh; /* Full viewport height */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
 
 h1 {
     text-align: center;
-    margin-bottom: 30px;
-    color: #512889;
+    margin: 10px 0 20px; /* Reduce the bottom margin */
+    color: var(--purple);
+}
+
+.option-container, .section-container {
+    width: 80%; /* Set a max width */
+    max-width: 600px; /* Maximum width of containers to avoid too wide on larger screens */
 }
 
 .option-container {
-    margin-bottom: 20px;
+    margin-bottom: 5px; /* Reduce space between options and first section */
     background: var(--panel-background);
-    padding: 15px 20px;
+    padding: 10px; /* Reduced padding */
     border-radius: 6px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .section-container {
     background: var(--panel-background);
-    padding: 15px 20px;
-    margin-top: 15px;
+    padding: 10px; /* Reduced padding */
+    margin-top: 10px; /* Reduced space between sections */
     border-radius: 6px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out; /* Smooth transition for interactive elements */
 }
 
 .section-header {
-    font-size: 1.3em;
-    margin-bottom: 10px;
+    font-size: 1.2em; /* Adjusted font size */
+    margin-bottom: 8px; /* Reduced space below headers */
     font-weight: bold;
     color: var(--purple);
 }
@@ -47,24 +59,21 @@ h1 {
 .input-row {
     display: flex;
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: 5px; /* Reduced bottom margin */
 }
 
 .input-row label {
-    width: 100px;
+    width: 100px; /* Ensure label width is consistent */
     font-weight: bold;
     margin-right: 10px;
     color: var(--text-color);
 }
 
-input[type="number"] {
-    width: 120px;
+input[type="number"], .button-63 {
+    width: calc(100% - 110px); /* Adjust input width to fill space */
     margin: 5px 0;
     padding: 6px;
-    border: 1px solid var(--border-color);
     border-radius: 4px;
-    font-size: 1em;
-    color: var(--text-color);
 }
 
 .button-63 {
@@ -72,31 +81,24 @@ input[type="number"] {
     background-image: linear-gradient(144deg, #AF40FF, #5B42F3 50%, #00DDEB);
     border: 0;
     border-radius: 8px;
-    box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
     color: #FFFFFF;
     display: flex;
-    font-family: 'Phantomsans', sans-serif;
-    font-size: 20px;
+    font-size: 16px; /* Slightly reduced font size */
     justify-content: center;
     line-height: 1em;
-    min-width: 140px;
-    padding: 19px 24px;
+    padding: 10px 15px; /* Adjusted padding */
     text-decoration: none;
     user-select: none;
     touch-action: manipulation;
     white-space: nowrap;
     cursor: pointer;
-    transition: background 0.2s ease-in-out;
-}
-
-.button-63:hover {
-    outline: 0;
+    margin-top: 5px; /* Reduced top margin */
 }
 
 .result {
-    margin-top: 10px;
+    margin-top: 5px; /* Reduced top margin for results */
     font-weight: bold;
-    font-size: 1.1em;
+    font-size: 1em; /* Adjusted font size */
     color: var(--text-color);
 }
 
